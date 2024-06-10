@@ -1,4 +1,5 @@
 import screenshot from '../../assets/img/screenshot2.png';
+import facebook from '../../assets/img/fb.png';
 
 import {FieldValues, useForm} from 'react-hook-form'
 
@@ -21,6 +22,7 @@ export const Login = () => {
   return (
     <div className="flex flex-row gap-4  mx-auto my-10 max-w-min p-3 justify-center ">
             <img src={screenshot} className='hidden lg:block py-10'/>
+        <div className='flex flex-col gap-3 justify-center items-center'>
         <div className="flex flex-col gap-10 justify-center items-center border-slate-200 border-[2px] p-3">
             <p className="text-[50px]">Instagram</p>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-2 w-[300px]">
@@ -64,9 +66,13 @@ export const Login = () => {
                     className="bg-blue-500 p-1.5 border rounded-md my-2 text-white" 
                 />
             </form>
-        <legend>sdf</legend>
+        <div className='flex flex-row gap-1'><img src={facebook} className='w-6' /> Login with facebook</div>
+        <div className='flex flex-row gap-1 text-sm'>Forgot password?</div>
         </div>
-        
+        <div className='border-slate-200 border-[2px] w-full p-7 text-center'>
+                Don't have an account? Sign up
+        </div>
+        </div>
     </div>
   )
 }
