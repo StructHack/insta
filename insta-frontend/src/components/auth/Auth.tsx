@@ -12,7 +12,7 @@ const AuthContext = createContext<null|any>(null)
 export const AuthProvider = ({children}:{children: any}) => {
 
     const [user, setUser] = useState<User|null>(null);
-    const API_URL = "http://localhost:3000";
+    const API_URL = process.env.API_URL;
 
     const login = async(username: string, password: string)=>{
         const response = await axios.post(`${API_URL}/auth/login`,{
