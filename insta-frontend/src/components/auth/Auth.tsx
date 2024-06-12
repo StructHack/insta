@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 type User = {
     id: Number,
@@ -39,7 +39,7 @@ export const AuthProvider = ({children}:{children: any}) => {
     }
     
 return (
-    <AuthContext.Provider value={{user, login, logout}}>
+    <AuthContext.Provider value={{user, login, logout, setUser}}>
         {children}
     </AuthContext.Provider>
   )
