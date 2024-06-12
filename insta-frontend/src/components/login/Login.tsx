@@ -2,12 +2,13 @@ import screenshot from '../../assets/img/screenshot2.png';
 import facebook from '../../assets/img/fb.png';
 
 import {FieldValues, useForm} from 'react-hook-form';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/Auth';
 
 export const Login = () => {
 
     const auth = useAuth();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -19,20 +20,25 @@ export const Login = () => {
     } = useForm();
 
     const onSubmit = async (data:FieldValues)=>{
-        console.log(data);
         try{
-            const res = await auth.login(data.username, data.password)
+            const res = await auth.login(data.username, data.password);
+            console.log(res)
+            navigate("/")
         }catch(err:any){
-            console.log('hurag')
+            console.log(err)
             if(err?.code == "ERR_NETWORK"){
                 setError("network",{
                     type:"custom",
                     message: "Server is down"
                 })
+            }else if(err.response.status === 401){
+                console.log('Unauthorized');
+                setError("unauthorized",{
+                    type:"custom",
+                    message: "Username/Password Incorrect."
+                })
             }
         }
-        setTimeout(()=>{reset()},1000)
-        // reset();
     }
 
   return (
@@ -56,7 +62,7 @@ export const Login = () => {
 
                 />
                 {errors.username && (
-                    <p className='text-red-500 text-sm'>{`${errors?.email?.message}`}</p>
+                    <p className='text-red-500 text-sm'>{`${errors?.username?.message}`}</p>
                 )}
                 <input
                     {
@@ -82,6 +88,9 @@ export const Login = () => {
                     value="Log in"
                     className="bg-blue-500 p-1.5 border rounded-md my-2 text-white" 
                 />
+                {errors.unauthorized && (
+                    <p className='text-red-500 text-sm'>{`${errors?.unauthorized?.message}`}</p>
+                )}
             </form>
         <div className='flex flex-row gap-1'>
             <NavLink to="/ouathfb" className="flex flex-row gap-1"><img src={facebook} className='w-6' /> Login with facebook</NavLink>
