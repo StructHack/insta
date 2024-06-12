@@ -3,6 +3,8 @@ import { Login } from "./components/login/Login"
 import { NotFound } from "./components/notfound/NotFound"
 import { SignUp } from "./components/signup/SignUp"
 import { AuthProvider } from "./components/auth/Auth"
+import { RequireAuth } from "./components/auth/RequireAuth"
+import { Home } from "./components/home/Home"
 
 function App() {
 
@@ -10,7 +12,8 @@ function App() {
   <AuthProvider>
       <div className="App">
         <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/ss" element={<RequireAuth><Home /></RequireAuth>} />
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
 
 

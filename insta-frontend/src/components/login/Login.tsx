@@ -2,13 +2,16 @@ import screenshot from '../../assets/img/screenshot2.png';
 import facebook from '../../assets/img/fb.png';
 
 import {FieldValues, useForm} from 'react-hook-form';
-import { NavLink, Navigate, useNavigate } from 'react-router-dom';
+import { NavLink, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/Auth';
 
 export const Login = () => {
 
     const auth = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const redirectPath = location.state?.path || '/'
 
     const {
         register,
@@ -23,7 +26,7 @@ export const Login = () => {
         try{
             const res = await auth.login(data.username, data.password);
             console.log(res)
-            navigate("/")
+            navigate(redirectPath,{replace:true})
         }catch(err:any){
             console.log(err)
             if(err?.code == "ERR_NETWORK"){
