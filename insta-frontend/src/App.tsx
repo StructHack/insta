@@ -12,7 +12,7 @@ function App() {
   <AuthProvider>
       <div className="App">
         <Routes>
-            <Route path="/ss" element={<RequireAuth><Home /></RequireAuth>} />
+            <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
 
