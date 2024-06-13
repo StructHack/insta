@@ -24,6 +24,7 @@ export const AuthProvider = ({children}:{children: any}) => {
                 id: response.data.id,
                 username: username,
                 access_token: response.data.access_token,
+                refresh_token: response.data.refresh_token
             }));
             setUser({
                 id: response.data.id,
