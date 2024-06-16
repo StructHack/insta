@@ -10,7 +10,7 @@ function App() {
 
   return (
   <AuthProvider>
-      <div className="App">
+      <div className="App max-w-[1080px] flex justify-center">
         <Routes>
             <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
             <Route path="/login" element={<Login />} />
