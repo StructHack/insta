@@ -5,6 +5,8 @@ import { SignUp } from "./components/signup/SignUp"
 import { AuthProvider } from "./components/auth/Auth"
 import { RequireAuth } from "./components/auth/RequireAuth"
 import { Home } from "./components/home/Home"
+import { Search } from "./search/Search"
+import { Post } from "./components/posts/Post"
 
 function App() {
 
@@ -12,7 +14,10 @@ function App() {
   <AuthProvider>
       <div className="App">
         <Routes>
-            <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
+            <Route path="/" element={<RequireAuth><Home /></RequireAuth>} >
+            <Route path="/search" element={<Search />} />
+            <Route path="/" element={<Post />} />
+            </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
 
