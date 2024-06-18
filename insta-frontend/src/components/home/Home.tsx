@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom"
 import { Nav } from "../nav/Nav"
-import { Post } from "../posts/Post"
+import { Stories } from "../stories/Stories"
 
 export const Home = () => {
   return (
     <div className="flex flex-row gap-2">
-      <Nav />
-      <Outlet /> 
+         <Nav />
+      <div className="flex flex-col gap-3 flex-1 ">
+          <Stories />
+          <Outlet /> 
+      </div>
 
     </div>
   )
