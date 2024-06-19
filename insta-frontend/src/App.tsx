@@ -5,7 +5,7 @@ import { SignUp } from "./components/signup/SignUp"
 import { AuthProvider } from "./components/auth/Auth"
 import { RequireAuth } from "./components/auth/RequireAuth"
 import { Home } from "./components/home/Home"
-import { Search } from "./search/Search"
+import { Search } from "./components/search/Search"
 import { Post } from "./components/posts/Post"
 
 function App() {

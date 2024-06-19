@@ -22,6 +22,7 @@ export const Profile = () => {
         setIsLoading(true)
         try{
         // const fetchedPosts = await axiosInstance.get("/posts")
+        // throw new Error("somethig wint ")
         setProfile(data);
         setIsLoading(false);
         }catch(e:any){
