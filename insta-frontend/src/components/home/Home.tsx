@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { Nav } from "../nav/Nav"
 import { Stories } from "../stories/Stories"
+import { Profile } from "../profile/Profile"
 
 export const Home = () => {
   return (
@@ -10,7 +11,7 @@ export const Home = () => {
           <Stories />
           <Outlet /> 
       </div>
-
+      <Profile />
     </div>
   )
 }

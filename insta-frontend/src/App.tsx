@@ -14,7 +14,7 @@ function App() {
   <AuthProvider>
       <div className="App">
         <Routes>
-            <Route path="/" element={<RequireAuth><Home /></RequireAuth>} >
+            <Route path="/" element={<><Home /></>} >
             <Route path="/search" element={<Search />} />
             <Route path="/" element={<Post />} />
             </Route>

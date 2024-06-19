@@ -32,7 +32,17 @@ export const Stories = () => {
                 id:2,
                 fullName: "Dipendra Shrestha"
             },
+
         } 
+ ,{
+            id: 3,
+            attachment: "broski,",
+            user:{
+                id:2,
+                fullName: "Dipendra Shrestha"
+            },
+
+        }
     ]
 
     const fetchStories= async ()=>{
