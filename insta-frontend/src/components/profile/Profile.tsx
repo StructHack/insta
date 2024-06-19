@@ -41,7 +41,7 @@ export const Profile = () => {
 
 
   return (
-    <div>sdfsd
+    <div className="w-[33%]">
     {
         error ? 
         <div>{error?.message}</div>
