@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axiosInstance from "../auth/AxiosInstance"
 import { AxiosError } from "axios"
-
+import one from "../../assets/img/one.jpg"
 
 type Story = {
     id:number,
@@ -20,14 +20,14 @@ export const Stories = () => {
     const data:Story[] = [
         {
             id: 1,
-            attachment: "Helsdflo world,",
+            attachment: "one.jpg",
             user:{
                 id:2,
                 fullName: "Dipendra Shrestha"
             },
         } ,{
             id: 2,
-            attachment: "broski,",
+            attachment: "two.jpg",
             user:{
                 id:2,
                 fullName: "Dipendra Shrestha"
@@ -36,7 +36,7 @@ export const Stories = () => {
         } 
  ,{
             id: 3,
-            attachment: "broski,",
+            attachment: "three.jpg",
             user:{
                 id:2,
                 fullName: "Dipendra Shrestha"
@@ -65,12 +65,12 @@ export const Stories = () => {
     return <div>Loading...</div>
   }
  return (
-    <div className="flex flex-row gap-2 h-[100px] justify-start items-center p-4 ">
+    <div className="flex flex-row gap-2 h-[100px] justify-start items-center p-4 border-2 my-2 mx-1 ">
         {
            error ? <div>{error.message}</div> :
            <div className="flex flex-row gap-[20px]">{
            stories?.map(s=>{
-            return <div className="border-black border-2 rounded-[50%] h-[70px] w-[70px]"key={s.id}>{s.attachment}</div>
+            return <div className="border-black border-2 rounded-[50%] h-[70px] w-[70px] overflow-hidden"key={s.id}><img src={one}/></div>
            }) 
             }</div>
         }
