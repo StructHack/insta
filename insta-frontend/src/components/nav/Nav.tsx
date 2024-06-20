@@ -3,7 +3,7 @@ import {  FaBell, FaCircle, FaCompass, FaFacebookMessenger, FaHome, FaPlus, FaSe
 
 export const Nav = () => {
   return (
-    <nav className="flex flex-col gap-3 justify-start items-start h-screen p-2 w-[300px] text-lg font-bold border-back border-2">
+    <nav className="flex flex-col gap-3 justify-start items-start h-screen p-2 w-[300px] text-lg font-bold border-back ">
         <p className="text-[46px] my-10">Instagram</p>
         <NavLink to="/" className="p-3 flex flex-row gap-1 w-full leading-9"> <FaHome className="text-[30px]"/> Home</NavLink>
         <NavLink to="/search"  className="p-3 flex flex-row gap-1 w-full leading-9"><FaSearch className="text-[30px]"/>Search</NavLink>

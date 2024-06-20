@@ -5,9 +5,9 @@ import { Profile } from "../profile/Profile"
 
 export const Home = () => {
   return (
-    <div className="flex flex-row gap-2">
+    <div className="flex flex-row -2">
          <Nav />
-      <div className="flex flex-col gap-3 flex-1 border-r-2">
+      <div className="flex flex-col  flex-1 ">
           <Stories />
           <Outlet /> 
       </div>

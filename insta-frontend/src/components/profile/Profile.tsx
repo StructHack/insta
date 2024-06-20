@@ -1,5 +1,6 @@
 import { AxiosError } from "axios";
 import { useEffect, useState } from "react";
+import food from "../../assets/img/food.jpg"
 
 type Profile = {
     id: number,
@@ -42,12 +43,13 @@ export const Profile = () => {
 
 
   return (
-    <div className="w-[33%]">
+    <div className="w-[45%]">
     {
         error ? 
         <div>{error?.message}</div>
-        :<div>{
-            profile?.fullName        }</div>
+        :<div>
+            {profile?.fullName}
+            </div>
     }
     </div>
 
