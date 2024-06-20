@@ -9,7 +9,7 @@ export const Home = () => {
          <Nav />
       <div className="flex flex-col  flex-1 ">
           <Stories />
-          <Outlet /> 
+          <Outlet/> 
       </div>
       <Profile />
     </div>

@@ -3,6 +3,7 @@ import axiosInstance from "../auth/AxiosInstance"
 import { AxiosError } from "axios"
 import two from '../../assets/img/two.jpg'
 import food from '../../assets/img/food.jpg'
+import { FaComment, FaHeart, FaShare } from "react-icons/fa"
 
 type Posts = {
     id: number,
@@ -22,13 +23,23 @@ export const Post = () => {
     const data:Posts[] = [
         {
             id: 1,
-            title: "Hello world,",
+            title: "Some food",
+            user:{
+                id:2,
+                fullName: "Dipendra Shrestha"
+            },
+            attachment: "sdfwerfsdf"
+        }, 
+                {
+            id: 1,
+            title: "Some food",
             user:{
                 id:2,
                 fullName: "Dipendra Shrestha"
             },
             attachment: "sdfwerfsdf"
         } 
+ 
     ]
 
     const fetchPosts = async ()=>{
@@ -59,13 +70,19 @@ export const Post = () => {
         <div>{error?.message}</div>
         :<div>{
             posts?.map(p=>{
-                return <div key={p.id} className="border-2">
+                return <div key={p.id} className="border-2 my-2">
                     <p className="flex flex-row gap-3 font-bold p-2">
                         <img src={two} className="w-8 rounded-[50%]"/>
                         {p.user.fullName}
                     </p>
                     
                     <img src={food} className="w-full"/>
+                    <div className="flex flex-row gap-5 my-2 text-[25px]">
+                    <FaHeart />
+                    <FaComment />
+                    <FaShare/>
+                    </div>
+                    <p className="font-bold">{p.title}</p>
                 </div>
             })
         }</div>
