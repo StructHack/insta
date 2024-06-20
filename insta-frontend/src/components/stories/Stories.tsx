@@ -65,7 +65,7 @@ export const Stories = () => {
     return <div>Loading...</div>
   }
  return (
-    <div className="flex flex-row gap-2 border-black border-2 h-[100px] justify-start items-center p-4 ">
+    <div className="flex flex-row gap-2 h-[100px] justify-start items-center p-4 ">
         {
            error ? <div>{error.message}</div> :
            <div className="flex flex-row gap-[20px]">{
