@@ -1,11 +1,12 @@
 import { AxiosError } from "axios";
 import { useEffect, useState } from "react";
-import food from "../../assets/img/food.jpg"
+import one from "../../assets/img/two.jpg"
 
 type Profile = {
     id: number,
     attachment: string,
-    fullName: string
+    fullName: string,
+    website: string
 }
 export const Profile = () => {
     const [profile, setProfile] = useState<Profile | null>(null);
@@ -15,7 +16,8 @@ export const Profile = () => {
 
         id:1,
         attachment: "abcdef",
-        fullName: "llksjdfiwefjHello world"
+        fullName: "Dipendra Shrestha",
+        website: "https://google.com"
     } 
          
 
@@ -47,8 +49,12 @@ export const Profile = () => {
     {
         error ? 
         <div>{error?.message}</div>
-        :<div>
-            {profile?.fullName}
+        :<div className="m-5 flex flex-row gap-3">
+            <img src={one} className="w-[50px] rounded-[50%]"/>
+            <p className="flex flex-col">
+                <span className="font-bold">{data.fullName}</span>
+                <span className="text-sm">{data.website}</span>
+                </p>
             </div>
     }
     </div>

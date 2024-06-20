@@ -10,7 +10,8 @@ type Posts = {
     title: string,
     user:{
         id: number,
-        fullName: string
+        fullName: string,
+        username: string
     },
     attachment: string
 }
@@ -26,7 +27,8 @@ export const Post = () => {
             title: "Some food",
             user:{
                 id:2,
-                fullName: "Dipendra Shrestha"
+                fullName: "Dipendra Shrestha",
+                username: "di11"
             },
             attachment: "sdfwerfsdf"
         }, 
@@ -35,7 +37,8 @@ export const Post = () => {
             title: "Some food",
             user:{
                 id:2,
-                fullName: "Dipendra Shrestha"
+                fullName: "Dipendra Shrestha",
+                username: "k1234"
             },
             attachment: "sdfwerfsdf"
         } 
@@ -77,12 +80,13 @@ export const Post = () => {
                     </p>
                     
                     <img src={food} className="w-full"/>
-                    <div className="flex flex-row gap-5 my-2 text-[25px]">
+                    <div className="flex flex-row gap-5 my-2 text-[20px] px-1">
                     <FaHeart />
                     <FaComment />
                     <FaShare/>
                     </div>
-                    <p className="font-bold">{p.title}</p>
+                    <p className="text-sm px-1">115 likes</p>
+                    <p className="font-bold text-sm px-1 pb-2">{p.user.username} {p.title}</p>
                 </div>
             })
         }</div>
