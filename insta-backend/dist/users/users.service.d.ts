@@ -7,4 +7,5 @@ export declare class UsersService {
     constructor(datasource: DataSource);
     findOneWithUserName(userName: string): Promise<UserEntity>;
     createUser(createUserDto: CreateUserDto): Promise<UserEntity>;
+    fetchUserDetails(username: string): Promise<any>;
 }

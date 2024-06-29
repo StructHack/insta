@@ -35,6 +35,20 @@ let UsersService = class UsersService {
             throw new common_1.HttpException("Something went wrong", common_1.HttpStatus.BAD_REQUEST);
         }
     }
+    async fetchUserDetails(username) {
+        try {
+            const user = await this.userRepository.findOne({
+                where: {
+                    username: username
+                }
+            });
+            const { password, ...result } = user;
+            return result;
+        }
+        catch (e) {
+            throw new common_1.HttpException("Something went wrong", common_1.HttpStatus.BAD_REQUEST);
+        }
+    }
 };
 exports.UsersService = UsersService;
 exports.UsersService = UsersService = __decorate([

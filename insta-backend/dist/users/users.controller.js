@@ -21,13 +21,12 @@ let UsersController = class UsersController {
         this.userService = userService;
     }
     async getUserDetails(req) {
-        console.log(req.user);
-        return 'ok';
+        console.log('username');
+        return this.userService.fetchUserDetails(req.user.userName);
     }
 };
 exports.UsersController = UsersController;
 __decorate([
-    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtGuard),
     (0, common_1.Get)(),
     __param(0, (0, common_1.Request)()),
     __metadata("design:type", Function),
@@ -35,6 +34,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "getUserDetails", null);
 exports.UsersController = UsersController = __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtGuard),
     (0, common_1.Controller)('users'),
     __metadata("design:paramtypes", [users_service_1.UsersService])
 ], UsersController);
