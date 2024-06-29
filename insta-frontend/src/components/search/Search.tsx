@@ -4,7 +4,6 @@ export const Search = () => {
   const [search, setSearch ] = useState<string>("");
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
-    console.log(search)
   }
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
     setSearch(e.target.value)
