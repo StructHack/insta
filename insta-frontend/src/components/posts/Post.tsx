@@ -59,6 +59,7 @@ export const Post = () => {
 
     useEffect(()=>{
         fetchPosts()
+        console.log(123)
     },[])
 
     if(isLoading){
