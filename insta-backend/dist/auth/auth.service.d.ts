@@ -10,6 +10,7 @@ export declare class AuthService {
         fullName: string;
         email: string;
         username: string;
+        post: import("../posts/entity/post.entity").PostEntity[];
     }>;
     login(user: UserEntity): Promise<{
         access_token: string;
@@ -19,6 +20,7 @@ export declare class AuthService {
         email: string;
         username: string;
         password: string;
+        post: import("../posts/entity/post.entity").PostEntity[];
     }>;
     refreshToken({ user }: {
         user: UserEntity;

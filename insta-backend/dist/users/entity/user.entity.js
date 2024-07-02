@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserEntity = void 0;
 const typeorm_1 = require("typeorm");
 const bcrypt = require("bcrypt");
+const post_entity_1 = require("../../posts/entity/post.entity");
 let UserEntity = class UserEntity {
     async hashPassword() {
         if (this.password) {
@@ -40,6 +41,10 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], UserEntity.prototype, "password", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => post_entity_1.PostEntity, (post) => post.user),
+    __metadata("design:type", Array)
+], UserEntity.prototype, "post", void 0);
 __decorate([
     (0, typeorm_1.BeforeInsert)(),
     __metadata("design:type", Function),

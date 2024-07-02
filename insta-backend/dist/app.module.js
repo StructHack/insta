@@ -17,6 +17,8 @@ const auth_service_1 = require("./auth/auth.service");
 const auth_controller_1 = require("./auth/auth.controller");
 const auth_module_1 = require("./auth/auth.module");
 const jwt_1 = require("@nestjs/jwt");
+const posts_controller_1 = require("./posts/posts.controller");
+const posts_module_1 = require("./posts/posts.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -27,8 +29,9 @@ exports.AppModule = AppModule = __decorate([
             typeorm_module_1.TypeOrmModule,
             users_module_1.UsersModule,
             auth_module_1.AuthModule,
+            posts_module_1.PostsModule,
         ],
-        controllers: [app_controller_1.AppController, auth_controller_1.AuthController],
+        controllers: [app_controller_1.AppController, auth_controller_1.AuthController, posts_controller_1.PostsController],
         providers: [app_service_1.AppService, auth_service_1.AuthService, jwt_1.JwtService],
     })
 ], AppModule);

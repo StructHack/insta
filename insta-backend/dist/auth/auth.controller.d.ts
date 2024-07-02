@@ -13,6 +13,7 @@ export declare class AuthController {
         email: string;
         username: string;
         password: string;
+        post: import("../posts/entity/post.entity").PostEntity[];
     }>;
     signup(createUserDto: CreateUserDto): Promise<import("../users/entity/user.entity").UserEntity>;
     refresh(req: any): Promise<{

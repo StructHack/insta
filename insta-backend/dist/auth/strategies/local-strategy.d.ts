@@ -9,6 +9,7 @@ export declare class LocalStrategy extends LocalStrategy_base {
         fullName: string;
         email: string;
         username: string;
+        post: import("../../posts/entity/post.entity").PostEntity[];
     }>;
 }
 export {};
